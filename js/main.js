@@ -55,6 +55,10 @@ var app = angular.module('angula', [
 window.routes =
 {
     "/": { templateUrl: "partials/home.html", controller: "HomeCtrl" ,requireLogin: false},
+    // "/home": { templateUrl: "partials/home.html", controller: "HomeCtrl" ,requireLogin: false},
+    "/donate": { templateUrl: "partials/donate.html", controller: "DonateCtrl" ,requireLogin: false},
+    "/about": { templateUrl: "partials/aboutUs.html" ,requireLogin: false},
+    "/contact": { templateUrl: "partials/contact.html",requireLogin: false},
 	"/login": { templateUrl: "partials/login.html", controller: "Login" ,requireLogin: false},
 	"/adminLogin": { templateUrl: "partials/admin/adminLogin.html", controller: "Login" ,requireLogin: false},
 	"/adminProfile": { templateUrl: "partials/admin/adminProfile.html", controller: "adminProfile" ,requireLogin: false},
@@ -169,6 +173,19 @@ app.controller("dataImagesWork2", function ($scope) {
 
 });
 
+app.controller("dataImagesWork2", function ($scope) {
+    $scope.images_work = [
+          { num: 1,  category: 'mac', name: 'Nature Pro', src: "8.jpg", description: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. ' },
+          { num: 2,  category: 'ipad', name: 'Boat NC', src: "10.jpg", description: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. ' },
+          { num: 3,  category: 'phone', name: 'Creative', src: "11.jpg", description: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. ' },
+          { num: 4,  category: 'mac', name: 'Room Pro', src: "5.jpg", description: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. ' },
+          { num: 5,  category: 'ipad', name: 'Office Airs', src: "4.jpg", description: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. ' },
+          { num: 6,  category: 'sound', name: 'Dancing', src: "6.jpg", description: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. ' },
+          { num: 7,  category: 'sound', name: 'Dancing', src: "12.jpg", description: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. ' },
+          { num: 8,  category: 'sound', name: 'Dancing', src: "9.jpg", description: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. '}];
+
+});
+
 //app.controller('fbController', function ($scope) {
 
 //    $scope.fetchUser = function () {
@@ -204,20 +221,25 @@ app.controller('TabsDemoCtrl', function ($scope, $window) {
 });
 
 // monitor animation 
-app.controller('HomeCtrl', function ($scope, $interval) {
+app.controller('HomeCtrl', function ($scope) {
 
-     var duration = 1600, steps = 3, step = 1;
-
-     $scope.customAttributeValue = step;
-
-    var start = $interval(function () {
-        if ($scope.customAttributeValue < steps) {
-            $scope.customAttributeValue += step;
-        }
-        else {
-            $scope.customAttributeValue = step;
-         }
-    }, duration);
+    $scope.optionList=[
+        {
+            name:"Donate For Poor",
+            icon:""
+        },
+        {
+            name:"Join RobinHood Army",
+            icon:""
+        },
+        {
+            name:"About Us",
+            icon:""
+        }, {
+            name:"Call Us",
+            icon:""
+        }]
+    
 
 });
 
