@@ -55,7 +55,7 @@ var app = angular.module('angula', [
 window.routes =
 {
     "/": { templateUrl: "partials/home.html", controller: "HomeCtrl" ,requireLogin: false},
-    // "/home": { templateUrl: "partials/home.html", controller: "HomeCtrl" ,requireLogin: false},
+    "/volunteer": { templateUrl: "partials/volunteer.html" ,requireLogin: false},
     "/donate": { templateUrl: "partials/donate.html", controller: "DonateCtrl" ,requireLogin: false},
     "/about": { templateUrl: "partials/aboutUs.html" ,requireLogin: false},
     "/contact": { templateUrl: "partials/contact.html",requireLogin: false},
